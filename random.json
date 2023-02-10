@@ -1,0 +1,32 @@
+[
+{
+"categoryName": "English",
+"taskName": "Doyle",
+"dueDate": "2021-07-23",
+"finDate": "2021-07-23",
+"status": "Incomplete",
+"upredicted": 3600,
+"spredicted": 3600,
+"currentTime": 0
+},
+{
+"categoryName": "English",
+"taskName": "Shakespeare",
+"dueDate": "2021-07-23",
+"finDate": "2021-07-23",
+"status": "Completed",
+"upredicted": 3600,
+"spredicted": 3600,
+"currentTime": 3750 
+},
+{
+"categoryName": "Films",
+"taskName": "Shortland",
+"dueDate": "2021-07-23",
+"finDate": "2021-07-23",
+"status": "Paused",
+"upredicted": 3600,
+"spredicted": 3600,
+"currentTime": 2100 
+}
+]

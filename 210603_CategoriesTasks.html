@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head >
+   <meta charset="utf-8">
+   <title>Prototype Outline</title>
+   <link rel="stylesheet" href="210603_All.css" />
+   <script defer src="rcsSelect.js"></script>
+   <script defer src="data.js"></script>
+   <script defer src="Stopwatch.js"></script>
+   <script defer src="210723_rcsFiles.js"></script>
+   <script defer src="210603_JS.js"></script>
+</head>
+<body id="body">
+<header>
+     <img src = "ApoioLogo.png" alt="apoio">
+     <span style="float:right; margin-left: 2px;">&copy;</span><img style="float:right;" src="site-logo.png" alt="msidelogo">
+     <hr>
+     <div id="optionsBar">
+       <button type="button" id="savBtn" class="opBar" name="button"> Save </button>
+       <button type="button" id="newCat" class="opBar" name="button"> New Category </button>
+       <button type="button" id="hisBtn" class="opBar" name="button"> History </button>
+       <button type="button" id="catBtn" class="opBar" name="button"> Categories </button>
+       <hr>
+     </div>
+</header>
+
+<main>
+
+  <div id="openDiv">
+    <input id="gFile" class="openDiv" type="file" hidden style="display: none;">
+    <label id="openBtn" class="openDiv" for="gFile" style="display: inline;font-family: American Typewriter, Copperplate,
+                                                                    monospace; color: white; font-size: 2em;">Open</label>
+    <br><br> OR <br><br>
+    <span id="newUser"> New User </button>
+  </div>
+
+  <div id="categories" style="display: none;">
+    <h1 id="catTitle"> CATEGORIES </h1><br>
+    <div class="dropdown">
+      <button type="button" class="dropbtn" id="dropbtnCat" name="button">DELETE</button>
+      <div class="dropdown-content" id="dropCat">
+      </div>
+    </div>
+    <button type="button" id="addButton" name="button"> ADD TASK </button>
+    <br><br>
+
+    <div>
+      <table id="categoryTable">
+        <tr class = "B" id = "tableCatHeader">
+           <th> NAME </th>
+        </tr>
+      </table>
+    </div>
+    <br><br>
+  </div>
+
+  <div id="tasks" style="display: none;">
+    <h1 id="taskTitleH"> CATEGORY: </h1><h1 id="taskCatTitle"></h1><br>
+    <button type="button" name="button" id="taskAdd">ADD</button>
+    <div class="dropdown">
+      <button type="button" class="dropbtn" id="dropbtnTask" name="button">DELETE</button>
+      <div class="dropdown-content" id="dropTask">
+      </div>
+    </div>
+    <!--    <button type="button" name="button" id="taskFilterIncomplete">INCOMPLETE</button>
+    <button type="button" name="button" id="taskFilterPaused">PAUSED</button>
+    <button type="button" name="button" id="taskFilterComplete">COMPLETE</button>
+    <button type="button" name="button" id="taskFilterAll">ALL</button> -->
+    <br><br>
+
+    <div>
+      <table id="taskTable">
+        <tr class = "B" id="taskTableHeader">
+           <th> NAME </th> <th> DATE </th> <th> STATUS </th>
+        </tr>
+
+      </table>
+    </div>
+    <br><br>
+  </div>
+
+  <div id="timerpage" style="display: none;">
+    <table border="1" align= "center" width="200px">
+      <tr>
+        <td>
+          <div class= "center">Category: <span style="font-size: 1.2em; font-family: American Typewriter, Copperplate, monospace;" id="stopwatchCat"></span></div><br>
+          <div class= "center">Task: <span style="font-size: 1.2em; font-family: American Typewriter, Copperplate, monospace;" id="stopwatchTask"></span></div><br>
+        </td>
+      </tr>
+    </table>
+    <div class="wrapper">
+      <div id="stopwatch">00:00:00:00</div>
+      <div class= "start"><button  id="start" type= "button">Start</button></div>
+      <div class= "pause"><button  id="pause" style="display: none;" type= "button">Pause</button></div>
+      <div class= "finish"><button id="timesubmit" type= "button">Finish</button></div>
+      <div><button  id="taskStartedTime" type= "button">Return</button></div>
+    </div>
+  </div>
+
+  <div id="taskentry" style="display: none;">
+    <h1>Task Creator</h1>
+    <h2>Enter Data Below!</h2>
+
+    <form action="" id="join-us">
+      <div class="fields">
+       <span>
+         <input placeholder="Name of Task" id="taskNameInput" type="text" />
+      </span><br><br>
+      <input placeholder="Category" id="taskCatInput" type="text" /><span id="taskCatInputSet"></span><br><br>
+      <input type="date" id="taskDateInput" min="2021-01-01" max="2030-12-31"><br><br>
+       <span>
+         Predicted Time:<br>
+         <input id="predHoursInp" type="number" placeholder=" Predicted Hours" min="0"
+         onKeyUp="if(this.value<0){this.value='0';}" class= "center"></input><br>
+         <input id="predMinsInp" type="number" placeholder=" Predicted Minutes" min ="0" max ="59"
+         onKeyUp="if(this.value>59){this.value='59';}else if(this.value<0){this.value='0';}" class= "center"></input><br>
+      </span>
+      <button id="showPredicted" type= "button" style="width: 50px; height: 20px; font-size: .7em; padding-left: 3px; padding-top: 4px;padding-right: 1px;">Hint</button> <span id="predSpan"></span>
+      <br>
+     <br />
+      </div>
+      <div class="submit">
+        <button id="tasksubmit" type= "button">Finish</button><br><br>
+        <button id="taskcancel" type= "button">Cancel</button>
+      </div>
+    </form>
+  </div>
+
+  <span id="reminder" style="bottom: 0; position: fixed; font-size: 0.7em;
+                          color: black;"> *Don't forget to save before closing </span>
+
+</main>
+</body>
+</html>
